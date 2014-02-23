@@ -12,7 +12,8 @@
             @endif
             @if(Session::has('link'))
             <h3 class="success">
-                {{ HTML::link(Session::get('link'), 'Click here for your shortened URL') }}
+                Your shortened URL is 
+                {{ HTML::link(Session::get('link'), action('LinkController@showUrl', Session::get('link'))) }}
             </h3>
             @endif
             @if(Session::has('message'))
